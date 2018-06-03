@@ -32,54 +32,23 @@ class UserToDoListViewController: UIViewController, UITableViewDelegate, UITable
         self.configureTableView()
         self.toDoList.dataSource = self
         self.toDoList.delegate = self
-        makeGetCall()
+        fetchListData()
     }
     
-    func makeGetCall() {
-        let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos/1"
-        guard let url = URL(string: todoEndpoint) else {
-            print("Error: cannot create URL")
-            return
-        }
-        let urlRequest = URLRequest(url: url)
-        
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        
-       
-        let task = session.dataTask(with: urlRequest) {
-            (data, response, error) in
-            
-            guard error == nil else {
-                print("error calling GET on /todos/1")
-                print(error!)
-                return
-            }
-            
-            guard let responseData = data else {
-                print("Error: did not receive data")
-                return
-            }
-          
+    func fetchListData() {
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/users/1/todos") else { return }
+        URLSession.shared.dataTask(with: url) {
+            (data, response , error) in
+            guard let data = data else { return }
             do {
-                guard let todo = try JSONSerialization.jsonObject(with: responseData, options: [])
-                    as? [String: Any] else {
-                        print("error trying to convert data to JSON")
-                        return
-                }
-                print("The todo is: " + todo.description)
-                
-                guard let todoTitle = todo["title"] as? String else {
-                    print("Could not get todo title from JSON")
-                    return
-                }
-                print("The title is: " + todoTitle)
-            } catch  {
-                print("error trying to convert data to JSON")
-                return
+                let decoder = JSONDecoder()
+                let toDoListData = try decoder.decode(ToDo.self, from: data)
+
+                print(toDoListData)
+            } catch let error {
+                print("Error", error)
             }
-        }
-        task.resume()
+         }.resume()
     }
     
     //TableView Configuration
@@ -94,7 +63,7 @@ class UserToDoListViewController: UIViewController, UITableViewDelegate, UITable
         guard let items = self.list else {
             return 0
         }
-        
+        print(items.title)
         return items.title.count
     }
     

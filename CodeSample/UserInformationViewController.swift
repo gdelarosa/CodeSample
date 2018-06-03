@@ -70,7 +70,6 @@ class UserInformationViewController: UIViewController {
                 let decoder = JSONDecoder()
                 let userData = try decoder.decode(UserInformation.self, from: data)
                 
-                
                 DispatchQueue.main.async {
                     self.userName.text = userData.name
                     self.userWebsite.text = userData.website
