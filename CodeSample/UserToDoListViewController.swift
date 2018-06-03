@@ -23,15 +23,16 @@ struct ToDoList : Codable {
 
 class UserToDoListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var list: ToDoList?
+    private var item = [ToDoList]()
     
     @IBOutlet weak var toDoList: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTableView()
-        self.toDoList.dataSource = self
-        self.toDoList.delegate = self
+        toDoList.delegate = self
+        toDoList.dataSource = self
+       
         fetchListData()
     }
     
@@ -43,7 +44,10 @@ class UserToDoListViewController: UIViewController, UITableViewDelegate, UITable
             do {
                 let decoder = JSONDecoder()
                 let toDoListData = try decoder.decode(ToDo.self, from: data)
-
+                
+                DispatchQueue.main.async {
+                    self.toDoList.reloadData()
+                }
                 print(toDoListData)
             } catch let error {
                 print("Error", error)
@@ -60,17 +64,13 @@ class UserToDoListViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let items = self.list else {
-            return 0
-        }
-        print(items.title)
-        return items.title.count
+        return item.count
     }
     
-    private static let cellReuseIdentifier = "cellToDo"
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as UITableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ToDoTableViewCell
+        
+        cell.titleLabel.text = item[indexPath.row].title
        
         return cell
     }
