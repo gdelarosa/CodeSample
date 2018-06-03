@@ -15,6 +15,7 @@
 		7704426920C3818800C29724 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704426620C3818800C29724 /* ViewController.swift */; };
 		7704426A20C3818800C29724 /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704426720C3818800C29724 /* UserInformationViewController.swift */; };
 		7704426C20C381CF00C29724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7704426B20C381CF00C29724 /* Main.storyboard */; };
+		7704426E20C3943C00C29724 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704426D20C3943C00C29724 /* ToDoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		7704426620C3818800C29724 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7704426720C3818800C29724 /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		7704426B20C381CF00C29724 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7704426D20C3943C00C29724 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				7704424520C3817200C29724 /* AppDelegate.swift */,
 				7704426720C3818800C29724 /* UserInformationViewController.swift */,
 				7704426520C3818800C29724 /* UserToDoListViewController.swift */,
+				7704426D20C3943C00C29724 /* ToDoTableViewCell.swift */,
 				7704426620C3818800C29724 /* ViewController.swift */,
 				7704426B20C381CF00C29724 /* Main.storyboard */,
 				7704424C20C3817300C29724 /* Assets.xcassets */,
@@ -207,6 +210,7 @@
 				7704426820C3818800C29724 /* UserToDoListViewController.swift in Sources */,
 				7704426A20C3818800C29724 /* UserInformationViewController.swift in Sources */,
 				7704424620C3817200C29724 /* AppDelegate.swift in Sources */,
+				7704426E20C3943C00C29724 /* ToDoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

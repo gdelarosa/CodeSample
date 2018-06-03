@@ -21,16 +21,17 @@ struct ToDoList : Codable {
     }
 }
 
-class UserToDoListViewController: UIViewController, UITableViewDataSource {
+class UserToDoListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var feed: ToDoList?
-    let tableView = UITableView.init()
+    var list: ToDoList?
     
     @IBOutlet weak var toDoList: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTableView()
+        self.toDoList.dataSource = self
+        self.toDoList.delegate = self
         makeGetCall()
     }
     
@@ -90,22 +91,19 @@ class UserToDoListViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let feed = self.feed else {
+        guard let items = self.list else {
             return 0
         }
         
-        return feed.title.count
+        return items.title.count
     }
     
     private static let cellReuseIdentifier = "cellToDo"
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: UserToDoListViewController.cellReuseIdentifier)
-        
-        if cell == nil {
-            cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: UserToDoListViewController.cellReuseIdentifier)
-        }
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as UITableViewCell
+       
+        return cell
     }
     
 }
