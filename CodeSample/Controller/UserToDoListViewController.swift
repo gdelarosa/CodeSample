@@ -39,7 +39,13 @@ class UserToDoListViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToCell") as! ToDoTableViewCell
         
         cell.titleLabel.text = todos[indexPath.row].title
-    
+        
+        if todos[indexPath.row].completed == true {
+            cell.completed?.image = UIImage(named: "checkmark")
+        } else {
+            cell.completed?.image = UIImage(named: "cross")
+        }
+        
         return cell
     }
     
