@@ -16,7 +16,7 @@
 		7704426A20C3818800C29724 /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704426720C3818800C29724 /* UserInformationViewController.swift */; };
 		7704426C20C381CF00C29724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7704426B20C381CF00C29724 /* Main.storyboard */; };
 		7704426E20C3943C00C29724 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7704426D20C3943C00C29724 /* ToDoTableViewCell.swift */; };
-		776D368D20C4C63200A434CD /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776D368C20C4C63200A434CD /* ApiManager.swift */; };
+		776D368D20C4C63200A434CD /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776D368C20C4C63200A434CD /* APIManager.swift */; };
 		776D368F20C4C6A300A434CD /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776D368E20C4C6A300A434CD /* Todo.swift */; };
 		776D369520C4CA2F00A434CD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 776D369420C4CA2F00A434CD /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
@@ -45,7 +45,7 @@
 		7704426720C3818800C29724 /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		7704426B20C381CF00C29724 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7704426D20C3943C00C29724 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
-		776D368C20C4C63200A434CD /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		776D368C20C4C63200A434CD /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		776D368E20C4C6A300A434CD /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		776D369420C4CA2F00A434CD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				776D368E20C4C6A300A434CD /* Todo.swift */,
-				776D368C20C4C63200A434CD /* ApiManager.swift */,
+				776D368C20C4C63200A434CD /* APIManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 				776D368F20C4C6A300A434CD /* Todo.swift in Sources */,
 				7704426920C3818800C29724 /* ViewController.swift in Sources */,
 				7704426820C3818800C29724 /* UserToDoListViewController.swift in Sources */,
-				776D368D20C4C63200A434CD /* ApiManager.swift in Sources */,
+				776D368D20C4C63200A434CD /* APIManager.swift in Sources */,
 				7704426A20C3818800C29724 /* UserInformationViewController.swift in Sources */,
 				7704424620C3817200C29724 /* AppDelegate.swift in Sources */,
 				7704426E20C3943C00C29724 /* ToDoTableViewCell.swift in Sources */,
