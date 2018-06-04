@@ -4,7 +4,7 @@
 //
 //  Created by Gina De La Rosa on 5/30/18.
 //  Copyright © 2018 Gina De La Rosa. All rights reserved.
-//
+//  Initial view controller displaying the segement control
 
 import UIKit
 
